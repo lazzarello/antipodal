@@ -1,5 +1,5 @@
 <Alloy>
 	<Window class="container">
-		<Module id="map" module="ti.map" method="createView" class="mapView" userLocation="true" region="{latitude: -33.87365, longitude: 151.20689, latitudeDelta: 0.1, longitudeDelta: 0.1 }" />
+		<Module id="map" module="ti.map" class="mapView" method="createView" userLocation="true" />
 	</Window>
 </Alloy>
