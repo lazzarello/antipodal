@@ -10,11 +10,9 @@
 //
 // Alloy.Globals.someGlobalFunction = function(){};
 var MapModule = require('ti.map');
-// FUCK YOU DOLPHIN! Check for "Google Play services" whatever the fuck that means. I just want maps, yo.
-// Oh also, this throws on iOS. Thanks for the cross platform code, nerds!
-/*
-var rc = MapModule.isGooglePlayServicesAvailable();
-switch (rc) {
+if (Titanium.Platform.name == 'android') {
+	var rc = MapModule.isGooglePlayServicesAvailable();
+	switch (rc) {
     case MapModule.SUCCESS:
         Ti.API.info('Google Play services is installed.');
         break;
@@ -33,5 +31,5 @@ switch (rc) {
     default:
         alert('Unknown error.');
         break;
+	}
 }
-*/
