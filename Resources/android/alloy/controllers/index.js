@@ -13,8 +13,7 @@ function Controller() {
     $.__views.index && $.addTopLevelView($.__views.index);
     $.__views.map = require("ti.map").createView({
         id: "map",
-        userLocation: "true",
-        region: "{latitude: -33.87365, longitude: 151.20689, latitudeDelta: 0.1, longitudeDelta: 0.1 }"
+        userLocation: "true"
     });
     $.__views.index.add($.__views.map);
     exports.destroy = function() {};
