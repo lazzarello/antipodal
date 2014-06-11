@@ -10,7 +10,9 @@
 //
 // Alloy.Globals.someGlobalFunction = function(){};
 var MapModule = require('ti.map');
-// FUCK YOU DOLPHIN! Check for "Google Play services" whatever the fuck that means. I just want maps yo.
+// FUCK YOU DOLPHIN! Check for "Google Play services" whatever the fuck that means. I just want maps, yo.
+// Oh also, this throws on iOS. Thanks for the cross platform code, nerds!
+/*
 var rc = MapModule.isGooglePlayServicesAvailable();
 switch (rc) {
     case MapModule.SUCCESS:
@@ -32,3 +34,4 @@ switch (rc) {
         alert('Unknown error.');
         break;
 }
+*/
