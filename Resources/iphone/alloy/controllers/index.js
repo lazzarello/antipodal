@@ -59,7 +59,7 @@ function Controller() {
             longitudeDelta: .01
         };
         alert("current lat: " + latitude + "\n" + "current long: " + longitude);
-        setTimeout(getAntipode("antipode", latitude, longitude), 3e4);
+        getAntipode("antipode", latitude, longitude);
         return;
     });
     $.index.open();

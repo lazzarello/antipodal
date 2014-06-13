@@ -33,7 +33,13 @@ function Controller() {
             latitude: -1 * lat,
             longitude: lon
         };
-        alert("new lat: " + coords.latitude + " new long: " + coords.longitude);
+        alert("new lat: " + coords.latitude + "\n" + "new long: " + coords.longitude);
+        $.mapview.region = {
+            latitude: coords.latitude,
+            longitude: coords.longitude,
+            latitudeDelta: 20,
+            longitudeDelta: 20
+        };
         return this.coords;
     };
     Ti.Geolocation.purpose = "Find my antipode";
@@ -46,8 +52,14 @@ function Controller() {
         }
         longitude = e.coords.longitude;
         latitude = e.coords.latitude;
-        alert("current lat: " + latitude + " current long: " + longitude);
-        setTimeout(getAntipode("antipode", latitude, longitude), 1e4);
+        $.mapview.region = {
+            latitude: latitude,
+            longitude: longitude,
+            latitudeDelta: .01,
+            longitudeDelta: .01
+        };
+        alert("current lat: " + latitude + "\n" + "current long: " + longitude);
+        getAntipode("antipode", latitude, longitude);
         return;
     });
     $.index.open();

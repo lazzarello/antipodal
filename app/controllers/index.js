@@ -40,7 +40,8 @@ Titanium.Geolocation.getCurrentPosition(function(e) {
 	$.mapview.region = {latitude: latitude, longitude: longitude,
 					latitudeDelta:0.01,longitudeDelta:0.01 };
 	alert("current lat: " + latitude + "\n" +  "current long: " + longitude);
-	var timeout = setTimeout(getAntipode("antipode", latitude,longitude ),30000);
+	//var timeout = setTimeout(getAntipode("antipode", latitude,longitude ),30000);
+	getAntipode("antipode", latitude,longitude );
 	return;
  });
 
