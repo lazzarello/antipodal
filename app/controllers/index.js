@@ -40,8 +40,10 @@ Titanium.Geolocation.getCurrentPosition(function(e) {
 		longitude = e.coords.longitude;
 		latitude = e.coords.latitude;
 	};
-};
-
-Titanium.Geolocation.getCurrentPosition(callback);
+	alert("current lat: " + latitude + " current long: " + longitude);
+	var timeout = setTimeout(getAntipode("antipode", latitude,longitude ),10000);
+	// void function. javascript is weird
+	return;
+ });
 
 $.index.open();
