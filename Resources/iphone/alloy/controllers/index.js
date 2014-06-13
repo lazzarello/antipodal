@@ -16,6 +16,10 @@ function Controller() {
     });
     $.__views.index && $.addTopLevelView($.__views.index);
     $.__views.mapview = Alloy.Globals.Map.createView({
+        mapType: Alloy.Globals.Map.NORMAL_TYPE,
+        animate: true,
+        regionFit: true,
+        userLocation: true,
         id: "mapview",
         ns: "Alloy.Globals.Map"
     });
@@ -23,9 +27,6 @@ function Controller() {
     report ? $.__views.mapview.addEventListener("click", report) : __defers["$.__views.mapview!click!report"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
-    $.mapview.userLocation = true;
-    $.mapview.regionFit = true;
-    $.mapview.mapType = Alloy.Globals.Map.NORMAL_TYPE;
     var getAntipode = function(title, lat, lon) {
         0 > lon ? lon += 180 : lon > 0 ? lon -= 180 : alert("you have no lat or long, are you sure you are on earth?");
         this.title = title;

@@ -5,4 +5,10 @@
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,
 	color: "#000"
-} 
+},
+"#mapview" : {
+	mapType: Alloy.Globals.Map.NORMAL_TYPE,
+	animate:true,
+	regionFit:true,
+	userLocation:true
+}

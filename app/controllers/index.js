@@ -2,10 +2,6 @@ function report(evt) {
 	Ti.API.info("Annotation " + evt.title + " clicked, id: " + evt.annotation.myid);
 }
 
-$.mapview.userLocation = true;
-$.mapview.regionFit = true;
-$.mapview.mapType = Alloy.Globals.Map.NORMAL_TYPE;
-
 var getAntipode = function(title,lat,lon) {
 	if ( lon < 0 ) {
   		lon = lon + 180;
