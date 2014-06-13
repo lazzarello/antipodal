@@ -2,11 +2,6 @@ function report(evt) {
 	Ti.API.info("Annotation " + evt.title + " clicked, id: " + evt.annotation.myid);
 }
 
-/*
-$.mapview.region = {latitude:0, longitude:0,
-					latitudeDelta:0.01,longitudeDelta:0.01 };
-*/
-
 $.mapview.userLocation = true;
 $.mapview.regionFit = true;
 $.mapview.mapType = Alloy.Globals.Map.NORMAL_TYPE;
@@ -24,7 +19,9 @@ var getAntipode = function(title,lat,lon) {
 		latitude: lat * -1,
 		longitude: lon
 	};
-	alert("new lat: " + coords.latitude + " new long: " + coords.longitude);
+	alert("new lat: " + coords.latitude + "\n" + "new long: " + coords.longitude);
+	$.mapview.region = {latitude: coords.latitude, longitude: coords.longitude,
+					latitudeDelta:20.0,longitudeDelta:20.0 };
 	return this.coords;
 };
 
@@ -40,9 +37,10 @@ Titanium.Geolocation.getCurrentPosition(function(e) {
 		longitude = e.coords.longitude;
 		latitude = e.coords.latitude;
 	};
-	alert("current lat: " + latitude + " current long: " + longitude);
-	var timeout = setTimeout(getAntipode("antipode", latitude,longitude ),10000);
-	// void function. javascript is weird
+	$.mapview.region = {latitude: latitude, longitude: longitude,
+					latitudeDelta:0.01,longitudeDelta:0.01 };
+	alert("current lat: " + latitude + "\n" +  "current long: " + longitude);
+	var timeout = setTimeout(getAntipode("antipode", latitude,longitude ),30000);
 	return;
  });
 
