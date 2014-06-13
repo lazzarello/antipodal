@@ -9,23 +9,23 @@
 // object. For example:
 //
 // Alloy.Globals.someGlobalFunction = function(){};
-var MapModule = require('ti.map');
+Alloy.Globals.Map = require('ti.map');
 if (Titanium.Platform.name == 'android') {
-	var rc = MapModule.isGooglePlayServicesAvailable();
+	var rc = Alloy.Globals.Map.isGooglePlayServicesAvailable();
 	switch (rc) {
-    case MapModule.SUCCESS:
+    case Alloy.Globals.Map.SUCCESS:
         Ti.API.info('Google Play services is installed.');
         break;
-    case MapModule.SERVICE_MISSING:
+    case Alloy.Globals.Map.SERVICE_MISSING:
         alert('Google Play services is missing. Please install Google Play services from the Google Play store.');
         break;
-    case MapModule.SERVICE_VERSION_UPDATE_REQUIRED:
+    case Alloy.Globals.Map.SERVICE_VERSION_UPDATE_REQUIRED:
         alert('Google Play services is out of date. Please update Google Play services.');
         break;
-    case MapModule.SERVICE_DISABLED:
+    case Alloy.Globals.Map.SERVICE_DISABLED:
         alert('Google Play services is disabled. Please enable Google Play services.');
         break;
-    case MapModule.SERVICE_INVALID:
+    case Alloy.Globals.Map.SERVICE_INVALID:
         alert('Google Play services cannot be authenticated. Reinstall Google Play services.');
         break;
     default:
