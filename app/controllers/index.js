@@ -9,28 +9,30 @@ $.mapview.region = {latitude:0, longitude:0,
 
 $.mapview.userLocation = true;
 $.mapview.regionFit = true;
-$.mapview.regionFit = Alloy.Globals.Map.NORMAL_TYPE;
+$.mapview.mapType = Alloy.Globals.Map.NORMAL_TYPE;
 
-var GeoData = function(title,lat,lon) {
+var getAntipode = function(title,lat,lon) {
 	if ( lon < 0 ) {
   		lon = lon + 180;
 	} else if (lon > 0) {
   		lon = lon - 180;
 	} else {
-		print("you're on the equator");
+		alert("you have no lat or long, are you sure you are on earth?");
 	}
 	this.title = title;
 	this.coords = {
-		latitude: lat,
+		latitude: lat * -1,
 		longitude: lon
 	};
+	alert("new lat: " + coords.latitude + " new long: " + coords.longitude);
+	return this.coords;
 };
 
-
-var latitude;
-var longitude;
-
-var callback = function(e) {
+Ti.Geolocation.purpose = "Find my antipode";
+Titanium.Geolocation.getCurrentPosition(function(e) {
+	var latitude;
+	var longitude;
+	
 	if (e.error) {
 		alert("cannot get your location");
 		return;
