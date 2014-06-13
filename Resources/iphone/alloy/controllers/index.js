@@ -25,18 +25,30 @@ function Controller() {
     _.extend($, $.__views);
     $.mapview.userLocation = true;
     $.mapview.regionFit = true;
-    $.mapview.regionFit = Alloy.Globals.Map.NORMAL_TYPE;
-    var latitude;
-    var longitude;
-    var callback = function(e) {
+    $.mapview.mapType = Alloy.Globals.Map.NORMAL_TYPE;
+    var getAntipode = function(title, lat, lon) {
+        0 > lon ? lon += 180 : lon > 0 ? lon -= 180 : alert("you have no lat or long, are you sure you are on earth?");
+        this.title = title;
+        this.coords = {
+            latitude: -1 * lat,
+            longitude: lon
+        };
+        alert("new lat: " + coords.latitude + " new long: " + coords.longitude);
+        return this.coords;
+    };
+    Ti.Geolocation.purpose = "Find my antipode";
+    Titanium.Geolocation.getCurrentPosition(function(e) {
+        var latitude;
+        var longitude;
         if (e.error) {
             alert("cannot get your location");
             return;
         }
         longitude = e.coords.longitude;
         latitude = e.coords.latitude;
-    };
-    Titanium.Geolocation.getCurrentPosition(callback);
+        alert("current lat: " + latitude + " current long: " + longitude);
+        setTimeout(getAntipode("antipode", latitude, longitude), 1e4);
+    });
     $.index.open();
     __defers["$.__views.mapview!click!report"] && $.__views.mapview.addEventListener("click", report);
     _.extend($, exports);
