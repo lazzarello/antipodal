@@ -8,9 +8,9 @@
     <description>Antipodal. Get backwards!</description>
     <copyright>2014 by Perspectonauts</copyright>
     <icon>appicon.png</icon>
-    <fullscreen>false</fullscreen>
+    <fullscreen>true</fullscreen>
     <navbar-hidden>false</navbar-hidden>
-    <analytics>true</analytics>
+    <analytics>false</analytics>
     <guid>caabf702-f30e-4bb3-849c-fbb762376846</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
     <ios>
