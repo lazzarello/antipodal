@@ -15,7 +15,17 @@ function Controller() {
         id: "index"
     });
     $.__views.index && $.addTopLevelView($.__views.index);
+    $.__views.__alloyId0 = Ti.UI.createLabel({
+        width: Ti.UI.SIZE,
+        height: Ti.UI.SIZE,
+        color: "#000",
+        text: "",
+        id: "__alloyId0"
+    });
+    $.__views.index.add($.__views.__alloyId0);
     $.__views.mapview = Alloy.Globals.Map.createView({
+        width: Ti.UI.FILL,
+        height: Ti.UI.FILL,
         mapType: Alloy.Globals.Map.NORMAL_TYPE,
         animate: true,
         regionFit: true,
@@ -23,7 +33,7 @@ function Controller() {
         id: "mapview",
         ns: "Alloy.Globals.Map"
     });
-    $.__views.index.add($.__views.mapview);
+    $.__views.__alloyId0.add($.__views.mapview);
     report ? $.__views.mapview.addEventListener("click", report) : __defers["$.__views.mapview!click!report"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);

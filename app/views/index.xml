@@ -1,5 +1,7 @@
 <Alloy>
-	<Window class="container">
-		<View id="mapview" ns="Alloy.Globals.Map" onClick="report" />
+	<Window>
+		<Label>
+			<View id="mapview" ns="Alloy.Globals.Map" onClick="report" />
+		</Label>
 	</Window>
 </Alloy>

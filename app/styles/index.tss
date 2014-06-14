@@ -1,4 +1,4 @@
-".container": {
+"Window": {
 	backgroundColor:"white"
 },
 "Label": {
@@ -7,6 +7,8 @@
 	color: "#000"
 },
 "#mapview" : {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
 	mapType: Alloy.Globals.Map.NORMAL_TYPE,
 	animate:true,
 	regionFit:true,
