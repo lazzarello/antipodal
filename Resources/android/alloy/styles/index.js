@@ -1,1 +1,1 @@
-module.exports = [{"isApi":true,"priority":1000.0003,"key":"Label","style":{width:Ti.UI.SIZE,height:Ti.UI.SIZE,color:"#000",}},{"isClass":true,"priority":10000.0002,"key":"container","style":{backgroundColor:"white",}}];
+module.exports = [{"isApi":true,"priority":1000.0002,"key":"Window","style":{backgroundColor:"white",}},{"isId":true,"priority":100000.0003,"key":"mapview","style":{width:Ti.UI.FILL,height:Ti.UI.FILL,mapType:Alloy.Globals.Map.HYBRID_TYPE,animate:true,regionFit:true,userLocation:true,}}];

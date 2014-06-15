@@ -18,7 +18,7 @@ function Controller() {
     $.__views.mapview = Alloy.Globals.Map.createView({
         width: Ti.UI.FILL,
         height: Ti.UI.FILL,
-        mapType: Alloy.Globals.Map.NORMAL_TYPE,
+        mapType: Alloy.Globals.Map.HYBRID_TYPE,
         animate: true,
         regionFit: true,
         userLocation: true,
