@@ -1,9 +1,6 @@
-Welcome to your Appcelerator Titanium Mobile Project
+Antipodal is an app that shows you where you are not.
 
-This is a blank project.  Start by editing your application's app.js to 
-make your first mobile project using Titanium.
-
-
+![antipodal splash](Resources/android/default.png)
 
 ----------------------------------
 Stuff our legal folk make us say:
